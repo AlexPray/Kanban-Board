@@ -6,6 +6,7 @@ let remove_event_hinzufuegen = function (task) {
     task.querySelector(".remove-button").addEventListener("click", () => {
         task.nextElementSibling.remove();
         task.remove();
+        speichern()
     });
 } 
 
@@ -50,28 +51,47 @@ let change_prio_event_hinzufuegen = function (task) {
     let prio = task.querySelector(".priority")
 
     prio.addEventListener("change", prio => {
-        if( prio.target.value === "high-prio") {
-            prio.target.classList.add("high-prio")
-            prio.target.classList.remove("selected")
-            prio.target.classList.remove("medium-prio")
-            prio.target.classList.remove("low-prio")
-        }
-        if( prio.target.value === "medium-prio") {
-            prio.target.classList.add("medium-prio")
-            prio.target.classList.remove("selected")
-            prio.target.classList.remove("high-prio")
-            prio.target.classList.remove("low-prio")
-        }
-        if( prio.target.value === "low-prio") {
-            prio.target.classList.add("low-prio")
-            prio.target.classList.remove("selected")
-            prio.target.classList.remove("medium-prio")
-            prio.target.classList.remove("high-prio")
-        }
+        prio_korrigieren(prio.target)
         speichern()
-        
     })
 };
+
+let prio_korrigieren = function (prio) {
+    if (prio.querySelector(".selected") !== null && prio.value === "Choose priority") {
+        let selected = prio.querySelector(".selected")
+        selected.remove()
+    }
+    if( prio.value === "high-prio") {
+        prio.classList.add("high-prio")
+        prio.classList.remove("selected")
+        prio.classList.remove("medium-prio")
+        prio.classList.remove("low-prio")
+        prio.firstElementChild.removeAttribute("selected")
+        prio.querySelector(".high-prio").setAttribute("selected", "")
+        prio.querySelector(".medium-prio").removeAttribute("selected", "")
+        prio.querySelector(".low-prio").removeAttribute("selected", "")
+    }
+    if( prio.value === "medium-prio") {
+        prio.classList.add("medium-prio")
+        prio.classList.remove("selected")
+        prio.classList.remove("high-prio")
+        prio.classList.remove("low-prio")
+        prio.firstElementChild.removeAttribute("selected")
+        prio.querySelector(".medium-prio").setAttribute("selected", "")
+        prio.querySelector(".high-prio").removeAttribute("selected", "")
+        prio.querySelector(".low-prio").removeAttribute("selected", "")
+    }
+    if( prio.value === "low-prio") {
+        prio.classList.add("low-prio")
+        prio.classList.remove("selected")
+        prio.classList.remove("medium-prio")
+        prio.classList.remove("high-prio")
+        prio.firstElementChild.removeAttribute("selected")
+        prio.querySelector(".low-prio").setAttribute("selected", "")
+        prio.querySelector(".high-prio").removeAttribute("selected", "")
+        prio.querySelector(".medium-prio").removeAttribute("selected", "")
+    }
+}
 
 let html_generieren = (function(e)  {
     let task = document.createElement("div");

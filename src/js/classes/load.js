@@ -13,6 +13,7 @@ if (localStorage.getItem("kanban_board_container") !== null) {
             editable_event_hinzufuegen(task);
             change_prio_event_hinzufuegen(task)
             drag_and_drop_event_hinzufuegen();
+            prio_korrigieren(task.querySelector(".priority"))
         }); 
     
         let add_task_buttons = document.querySelectorAll(".add-task-button");
@@ -26,3 +27,4 @@ if (localStorage.getItem("kanban_board_container") !== null) {
         });
     }
 }
+
