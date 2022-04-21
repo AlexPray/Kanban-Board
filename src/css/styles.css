@@ -1,0 +1,169 @@
+@font-face {
+    font-family: 'aleo';
+    src: url('../fonts/aleo_regular_macroman/Aleo-Regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Colors:
+    Blue: #4285F4
+
+    Yellow: #F4B400
+
+    Green: #0F9D58
+
+    Red: #DB4437
+*/
+
+body {
+    font-family: 'aleo';
+}
+
+.titel-container {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.board-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.task-collum  {
+    width: 20%;
+}
+
+.task-collum  h2 {
+    text-align: center;
+    margin: 0;
+}
+
+.to-do-collum > h2 {
+    background-color: #4285F4;
+    border: solid black 1px;
+}
+
+.in-progress-collum> h2 {
+    background-color: #F4B400;
+    border: solid black 1px;
+}
+
+.finished-collum > h2 {
+    background-color: #0F9D58;
+    border: solid black 1px;
+}
+
+.suspended-collum > h2 {
+    background-color: #db4537;
+    border: solid black 1px;
+}
+
+.drop-area {
+    height: 10px;
+    width: 100%;
+}
+
+.task {
+    background-color: #4286f44f;
+    display: flex;
+    flex-direction: column;
+    border: solid black 1px;
+}
+
+.over {
+    background-color: #4286f448;
+    height: 70px;
+    transition: height 0.3s ease-in-out;
+    width: 100%;
+    border: dashed black 1px;
+    box-sizing: border-box;
+}
+
+.titel {
+    margin: 3px 5px 0 5px;
+}
+
+h3 {
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+.task-description {
+    margin: 3px 5px 0 5px;
+}
+
+.greyed-out {
+    color: rgba(80,80,80);
+}
+
+.priority {
+    float: left;
+    border: none;
+
+    min-width: 50%;
+    padding: 3px 2px;
+}
+
+.selected {
+    background-color: #4286f49b;
+    color: rgba(80,80,80);
+}
+
+.high-prio {
+    background-color: #db4537;
+    appearance: none;
+}
+
+.medium-prio {
+    background-color: #F4B400;
+    appearance: none;
+}
+
+.low-prio {
+    background-color: #0F9D58;
+    appearance: none;
+}
+
+/* .associate {
+    margin: 0.1rem 0 0 0;
+} */
+
+.remove-button-container {
+    display: flex;
+}
+
+.empty-div {
+    width: 92%;
+    height: 100%;
+}
+
+.remove-button {
+    color: #db4537;
+    background-color: #4286f400;
+    border: none;
+    width: 20%;
+    height: 16px;
+    width: 16px;
+    margin-top: 0.5rem;
+    padding: 0 0 4px 0;
+}
+
+.remove-button:hover {
+    transform: scale(1.2);
+    transition: all 120ms linear;
+    cursor: pointer;
+}
+
+.add-task-button {
+    background-color: #4285F4;
+    border: none;
+    width: 100%;
+    height: auto;
+    border: solid black 1px;
+}
+
+.add-task-button:hover {
+    background-color: #4286f4d8;
+    cursor: pointer;
+}

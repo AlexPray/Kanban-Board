@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="src/css/styles.css">
+    </head>
+
+    <body>
+
+      <div id="kanban-board-container">
+
+        <div class="titel-container"> 
+            <h1>Kanban Board</h1>
+        </div>
+
+        <div class="board-container">
+
+            <div class="board-area">
+
+              <div class="task-collum to-do-collum">
+
+                <h2>To do</h2>
+
+                <div class="drop-area"></div>
+
+                <div><button class="add-task-button"><img src="./src/img/plus-svg.svg" alt=""></button></div>
+
+              </div>
+
+              <div class="task-collum in-progress-collum">
+
+                <h2>In progress</h2>
+
+                <div class="drop-area"></div>
+
+                <div><button class="add-task-button"><img src="./src/img/plus-svg.svg" alt=""></button></div>
+
+              </div>
+
+              <div class="task-collum finished-collum">
+
+                <h2>Finished</h2>
+
+                <div class="drop-area"></div>
+
+                <div><button class="add-task-button"><img src="./src/img/plus-svg.svg" alt=""></button></div>
+
+              </div>
+
+              <div class="task-collum suspended-collum">
+
+                <h2>Suspended</h2>
+
+                <div class="drop-area"></div>
+                
+                <div><button class="add-task-button"><img src="./src/img/plus-svg.svg" alt=""></button></div>
+
+              </div>
+
+            </div>
+
+        </div>
+
+      </div>
+
+      <script src="src/js/classes/load.js" defer></script>
+      <script src="src/js/classes/Add_task.js" defer></script>
+      <script src="src/js/classes/Drag_and_drop.js" defer></script>
+      <script src="src/js/main.js" defer></script>
+
+    </body>
+
+</html>
