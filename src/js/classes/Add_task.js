@@ -49,18 +49,23 @@ let editable_event_hinzufuegen = function (task) {
 
 let change_prio_event_hinzufuegen = function (task) {
     let prio = task.querySelector(".priority")
-
     prio.addEventListener("change", prio => {
         prio_korrigieren(prio.target)
         speichern()
     })
 };
 
-let prio_korrigieren = function (prio) {
-    if (prio.querySelector(".selected") !== null && prio.value === "Choose priority") {
+let remove_selected = function (prio) {
+    if (prio.querySelector(".selected") !== null && prio.value !== "choose priority") {
         let selected = prio.querySelector(".selected")
         selected.remove()
     }
+}
+
+let prio_korrigieren = function (prio) {
+
+    remove_selected(prio)
+
     if( prio.value === "high-prio") {
         prio.classList.add("high-prio")
         prio.classList.remove("selected")
@@ -166,7 +171,13 @@ let html_generieren = (function(e)  {
     // img.setAttribute("src", "./src/img/delete.png")
     // remove_button.insertAdjacentElement("afterbegin", img)
 
-    e.target.parentElement.insertAdjacentElement("beforebegin", task)
+    console.log(e);
+    if(e.target.className === "add-task-button" ) {
+        e.target.insertAdjacentElement("beforebegin", task)
+    } else {
+        e.target.parentElement.insertAdjacentElement("beforebegin", task)
+    }
+    
 
     remove_event_hinzufuegen(task);
     editable_event_hinzufuegen(task);
