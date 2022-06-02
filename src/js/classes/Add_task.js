@@ -14,6 +14,7 @@ let editable_event_hinzufuegen = function (task) {
     task.querySelector(".titel").addEventListener("dblclick", titel => {
         titel.target.contentEditable = true;
         titel.target.focus();
+        titel.target.getSelection()
     });
 
     task.querySelector(".titel").addEventListener("blur", titel => {
@@ -45,7 +46,11 @@ let editable_event_hinzufuegen = function (task) {
         }
     })
 
-}
+
+    if (document.activeElement === task.querySelector(".task-description")) {
+        task.querySelector(".task-description").select();
+    }
+};
 
 let change_prio_event_hinzufuegen = function (task) {
     let prio = task.querySelector(".priority")
@@ -129,10 +134,10 @@ let html_generieren = (function(e)  {
 
     let selected = document.createElement("option")
     selected.setAttribute("class", "selected")
-    selected.setAttribute("value", "choose priority")
+    selected.setAttribute("value", "priority")
     selected.setAttribute("selected", "")
     selected.setAttribute("disabled", "")
-    selected.innerText = "Choose priority"
+    selected.innerText = "Priority"
     priority.insertAdjacentElement("afterbegin", selected)
 
 

@@ -100,7 +100,6 @@ h3 {
 .priority {
     float: left;
     border: none;
-
     min-width: 50%;
     padding: 3px 2px;
 }
@@ -146,7 +145,8 @@ h3 {
     height: 16px;
     width: 16px;
     margin-top: 0.5rem;
-    padding: 0 0 4px 0;
+    padding: 0  2px 4px 0;
+    margin-left: auto;
 }
 
 .remove-button:hover {
@@ -166,4 +166,53 @@ h3 {
 .add-task-button:hover {
     background-color: #4286f4d8;
     cursor: pointer;
+}
+
+.add-task-button > img {
+    margin-top: 4.5px;
+
+}
+
+@media only screen and (orientation:portrait) {
+  body {
+    height: 100vw;
+    transform: rotate(90deg);
+  }  
+}
+
+@media only screen and (max-width:620px) {
+    h2 {
+        font-size: 14px;
+    }
+    .task {
+        font-size: 10px;
+    }
+    .priority {
+        font-size: 10px;
+    }
+    .add-task-button {
+        transform: scaleY(0.8);
+    }
+    .add-task-button > img {
+        transform: scale(0.8);
+    }
+
+}
+
+@media only screen and (max-width:440px) {
+    h2 {
+        font-size: 10px;
+    }
+    .task {
+        font-size: 8px;
+    }
+    .priority {
+        font-size: 8px;
+    }
+    .add-task-button {
+        transform: scaleY(0.6);
+    }
+    .add-task-button > img {
+        transform: scale(0.7);
+    }
 }
