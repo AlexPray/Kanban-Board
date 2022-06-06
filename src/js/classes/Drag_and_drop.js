@@ -1,13 +1,15 @@
 "use strict" 
 
+/**
+ * this functions adds the drag-and-drop-event to the task.
+ */
 let drag_and_drop_event_hinzufuegen = function () {
-
     let task_list = document.querySelectorAll(".task");
     let items = Array.from(task_list)
     if (items.length !== 0) {
         items.length = 0
         items = document.querySelectorAll(".task");
-    };   
+    };
     
     let drop_area_list = document.querySelectorAll(".drop-area");
     let drop_areas = Array.from(drop_area_list)

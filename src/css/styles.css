@@ -7,11 +7,8 @@
 
 /* Colors:
     Blue: #4285F4
-
     Yellow: #F4B400
-
     Green: #0F9D58
-
     Red: #DB4437
 */
 
@@ -19,18 +16,21 @@ body {
     font-family: 'aleo';
 }
 
+/* Header */
 .titel-container {
     display: flex;
     justify-content: center;
     
 }
 
-.board-area {
+/* Task-area */
+.task-area {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
+/* Task-collums */
 .task-collum  {
     width: 20%;
 }
@@ -60,11 +60,13 @@ body {
     border: solid black 1px;
 }
 
+/* Drop-area */
 .drop-area {
     height: 10px;
     width: 100%;
 }
 
+/* Tasks */
 .task {
     background-color: #4286f44f;
     display: flex;
@@ -97,6 +99,7 @@ h3 {
     color: rgba(80,80,80);
 }
 
+/* Priority */
 .priority {
     float: left;
     border: none;
@@ -128,6 +131,7 @@ h3 {
     margin: 0.1rem 0 0 0;
 } */
 
+/* Remove-button */
 .remove-button-container {
     display: flex;
 }
@@ -155,6 +159,7 @@ h3 {
     cursor: pointer;
 }
 
+/* Add-task-button */
 .add-task-button {
     background-color: #4285F4;
     border: none;
@@ -173,11 +178,12 @@ h3 {
 
 }
 
+/* Media queries */
 @media only screen and (orientation:portrait) {
   body {
     height: 100vw;
     transform: rotate(90deg);
-  }  
+  }
 }
 
 @media only screen and (max-width:620px) {
@@ -196,7 +202,6 @@ h3 {
     .add-task-button > img {
         transform: scale(0.8);
     }
-
 }
 
 @media only screen and (max-width:440px) {

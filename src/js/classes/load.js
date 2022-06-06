@@ -1,5 +1,8 @@
 "use strict" 
 
+/**
+ * loads the HTML of the Kanban-board from localStorage and adds all Events of the application
+ */
 if (localStorage.getItem("kanban_board_container") !== null) {
     window.onload = function () {
 
@@ -7,7 +10,6 @@ if (localStorage.getItem("kanban_board_container") !== null) {
         kanban_board_container.innerHTML = `${localStorage.getItem('kanban_board_container')}`
 
         let task_list = document.querySelectorAll(".task")
-    
         task_list.forEach(function (task) {
             remove_event_hinzufuegen(task);
             editable_event_hinzufuegen(task);
@@ -18,10 +20,9 @@ if (localStorage.getItem("kanban_board_container") !== null) {
         }); 
     
         let add_task_buttons = document.querySelectorAll(".add-task-button");
-    
-        add_task_buttons.forEach(e => {
-            e.addEventListener("click", e => {
-                html_generieren(e);
+        add_task_buttons.forEach(button => {
+            button.addEventListener("click", button => {
+                html_generieren(button);
                 drag_and_drop_event_hinzufuegen();
                 speichern()
             })
