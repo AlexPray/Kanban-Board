@@ -13,30 +13,10 @@ let html_generieren = (function(add_task_button)  {
     task.setAttribute("id", timestamp);
     task.setAttribute("draggable", "true")
 
-    let titel = document.createElement("h3");
-    titel.setAttribute("class", "titel greyed-out");
-    titel.textContent = "-Enter title here-"
-    task.insertAdjacentElement("afterbegin", titel);
-
-    let description = document.createElement("p");
-    description.setAttribute("class", "task-description greyed-out");
-    description.textContent = "-Enter task descripton here-"
-    titel.insertAdjacentElement("afterend", description);
-
-    /**
-     * @todo
-     */
-    // let associate = document.createElement("select");
-    // associate.setAttribute("class", "associate");
-    // description.insertAdjacentElement("afterend", associate);
-
-    let remove_button_container = document.createElement("div");
-    remove_button_container.setAttribute("class", "remove-button-container");
-    description.insertAdjacentElement("afterend", remove_button_container);
-
     let priority = document.createElement("select")
     priority.setAttribute("name", "priority")
     priority.setAttribute("class", "priority selected")
+    task.insertAdjacentElement("afterbegin", priority)
 
     let selected = document.createElement("option")
     selected.setAttribute("class", "selected")
@@ -64,7 +44,30 @@ let html_generieren = (function(add_task_button)  {
     low_prio.innerText = "Low-prio"
     medium_prio.insertAdjacentElement("afterend", low_prio)
 
-    titel.insertAdjacentElement("beforebegin", priority)
+    let associate = document.createElement("select");
+    associate.setAttribute("class", "associate");
+    priority.insertAdjacentElement("afterend", associate);
+
+    let associate_default = document.createElement("option")
+    associate_default.setAttribute("value", "associate")
+    associate_default.setAttribute("selected", "")
+    associate_default.setAttribute("disabled", "")
+    associate_default.innerText = "Associate"
+    associate.insertAdjacentElement("afterbegin", associate_default)
+
+    let titel = document.createElement("h3");
+    titel.setAttribute("class", "titel greyed-out");
+    titel.textContent = "-Enter title here-"
+    associate.insertAdjacentElement("afterend", titel);
+
+    let description = document.createElement("p");
+    description.setAttribute("class", "task-description greyed-out");
+    description.textContent = "-Enter task descripton here-"
+    titel.insertAdjacentElement("afterend", description);
+
+    let remove_button_container = document.createElement("div");
+    remove_button_container.setAttribute("class", "remove-button-container");
+    description.insertAdjacentElement("afterend", remove_button_container);
 
     let empty_div = document.createElement("div");
     empty_div.setAttribute("class", "empty-div");

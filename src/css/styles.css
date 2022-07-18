@@ -127,9 +127,10 @@ h3 {
     appearance: none;
 }
 
-/* .associate {
+.associate {
     margin: 0.1rem 0 0 0;
-} */
+    background-color: inherit;
+}
 
 /* Remove-button */
 .remove-button-container {
